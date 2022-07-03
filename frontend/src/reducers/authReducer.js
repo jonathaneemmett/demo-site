@@ -7,7 +7,7 @@ import { AUTH_LOADING, USER_LOGIN, USER_LOGOUT } from '../actions/types';
 
 // Initial State
 const initialState = {
-    user: {},
+    user: null,
     is_loading: false
 };
 
@@ -23,7 +23,7 @@ export default (state = initialState, action) => {
         case USER_LOGOUT:
             return {
                 ...state,
-                user: {},
+                user: null,
                 is_loading: false
             }
         case AUTH_LOADING:
@@ -31,6 +31,8 @@ export default (state = initialState, action) => {
                 ...state,
                 is_loading: true
             }
+        default:
+            return state;
     }
 
 }
