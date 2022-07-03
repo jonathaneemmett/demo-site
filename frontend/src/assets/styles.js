@@ -1,5 +1,8 @@
 import { createUseStyles } from 'react-jss';
 import { Colors } from './colors';
+
+// Site Styles
+
 export const useStyles = createUseStyles({
     '@global': {
         '*': {
@@ -38,10 +41,10 @@ export const useStyles = createUseStyles({
     },
     navLinks: {
         '& a': {
-            color: Colors.teal,
+            color: Colors.white,
         },
         '& :hover': {
-            color: Colors.white
+            color: Colors.darkGrey
         },
         '& input[type=checkbox]':{
             display: "none"
@@ -247,16 +250,16 @@ export const useStyles = createUseStyles({
         listStyle: "none",
         padding: "15px 25px 15px 25px",
         margin: "5px",
-        background: "rgba(0, 0, 0, .5)",
+        background: Colors.black50,
         borderRadius: "5px",
         cursor: "pointer",
         '&:hover': {
-            background: "rgba(0, 0, 0, 1)"
+            background: Colors.black
         }
     },
     pageItemLink: {
         textDecoration: "none",
-        color: "rgba(255, 255, 255, 1)"
+        color: Colors.white
     },
     // End Pagination
     // Product Styling
@@ -275,10 +278,10 @@ export const useStyles = createUseStyles({
         }
     },
     productItem: {
-      background: "rgba(0, 0, 0, .75)",
+      background: Colors.black75,
       padding: "15px",
-      color: "rgba(255, 255, 255, 1)",
-      boxShadow: "0 0 3px rgba(0, 0, 0, 0.3)",
+      color: Colors.white,
+      boxShadow: `0 0 3px ${Colors.black}`,
       '@media screen and (max-width: 768px)': {
           width: "100%",
       }
@@ -287,7 +290,7 @@ export const useStyles = createUseStyles({
       display: "flex",
       justifyContent: "space-between",
       alignItems: "center",
-      color: "rgba(255, 255, 255, 1)",
+      color: Colors.white,
       padding: "5px"
     },
     productName: {
@@ -296,7 +299,7 @@ export const useStyles = createUseStyles({
         height: "100%"
     },
     productStars: {
-        color: "red",
+        color: Colors.red,
         whiteSpace: "nowrap"
     },
     productImage: {
@@ -340,7 +343,7 @@ export const useStyles = createUseStyles({
     // End Footer
     // Error
     error: {
-        color: "red",
+        color: Colors.red,
     },
     errorPageContainer: {
         height: "100vh"

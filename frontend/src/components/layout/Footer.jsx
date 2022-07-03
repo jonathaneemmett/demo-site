@@ -4,6 +4,11 @@ import React from 'react';
 import {useStyles} from "../../assets/styles";
 import {Link} from "react-router-dom";
 
+/**
+ * @desc    Site Footer
+ * @return {JSX.Element}
+ * @constructor
+ */
 const Footer = () => {
     const classes = useStyles();
 

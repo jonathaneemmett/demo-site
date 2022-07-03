@@ -4,6 +4,11 @@ import { connect } from "react-redux";
 // Styles
 import { useStyles } from "../../assets/styles";
 
+/**
+ * @desc    Site Profile Page
+ * @return {JSX.Element}
+ * @constructor
+ */
 const Profile = ({ user: {user}}) => {
     const classes = useStyles();
 

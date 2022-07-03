@@ -9,6 +9,11 @@ import { login } from "../../actions/authActions";
 import { useStyles } from "../../assets/styles";
 import {Link} from "react-router-dom";
 
+/**
+ * @desc    Site Login Page
+ * @return {JSX.Element}
+ * @constructor
+ */
 const Login = ({user: { user, is_loading }, login}) => {
     const classes = useStyles();
 
@@ -19,6 +24,7 @@ const Login = ({user: { user, is_loading }, login}) => {
     const [emailError, setEmailError] = useState(false);
     const [passwordError, setPasswordError] = useState(false);
 
+    // Redirected if logged in
     if(user){
         return <Navigate to="/profile" replace />
     }

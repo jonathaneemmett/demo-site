@@ -6,6 +6,11 @@ import { useStyles } from "../../assets/styles";
 import Pagination from "../pagination/Pagination";
 import ProductItem from "../products/ProductItem";
 
+/**
+ * @desc    Site Home Page
+ * @return {JSX.Element}
+ * @constructor
+ */
 const Home = ({ products: { products, filteredProducts, is_loading }, search }) => {
     const classes = useStyles();
 
@@ -27,6 +32,7 @@ const Home = ({ products: { products, filteredProducts, is_loading }, search }) 
                             filteredProducts.length > 0 && search !== "" ? filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct) :
                             [];
 
+    // Handles Loading
     if(is_loading) {
         //TODO: setup spinner for loading
         return <div>Loading...</div>

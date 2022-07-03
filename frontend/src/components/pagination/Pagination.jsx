@@ -1,3 +1,8 @@
+import React from 'react';
+
+// Styles
+import { useStyles } from "../../assets/styles";
+
 /**
  * @desc    Used to paginate items
  * @param postsPerPage
@@ -6,11 +11,6 @@
  * @returns {JSX.Element}
  * @constructor
  */
-import React from 'react';
-
-// Styles
-import { useStyles } from "../../assets/styles";
-
 const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
     const classes = useStyles();
 

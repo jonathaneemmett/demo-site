@@ -11,9 +11,15 @@ import { FaBars } from "react-icons/fa";
 // Styles
 import { useStyles } from "../../assets/styles";
 
+/**
+ * @desc    Site Navbar
+ * @return {JSX.Element}
+ * @constructor
+ */
 const Navbar = ({user: {user}, logOut}) => {
     const classes = useStyles();
 
+    // funcs
     const handleLogout = async (e) => {
         e.preventDefault();
         await logOut();

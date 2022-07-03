@@ -4,6 +4,11 @@ import { FaStar } from 'react-icons/fa';
 // Styles
 import { useStyles } from "../../assets/styles";
 
+/**
+ * @desc    Product Item
+ * @return {JSX.Element}
+ * @constructor
+ */
 const ProductItem = (data) => {
     const classes = useStyles();
 

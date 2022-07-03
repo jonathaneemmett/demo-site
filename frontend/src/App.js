@@ -20,12 +20,18 @@ import 'react-toastify/dist/ReactToastify.css';
 // Styles
 import { useStyles } from "./assets/styles";
 
-
+/**
+ * @desc    Main App
+ * @return {JSX.Element}
+ * @constructor
+ */
 const App = ({products: { products }, loadProducts}) => {
     const classes = useStyles();
 
+    // Will be required when I get the search piece in.
     const [search, setSearch] = useState("");
 
+    // Loads products if they are empty
     useEffect(() => {
         if(products.length <= 0 ){
             loadProducts();

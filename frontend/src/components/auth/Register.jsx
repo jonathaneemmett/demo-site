@@ -9,6 +9,11 @@ import { register } from "../../actions/authActions";
 import { useStyles } from "../../assets/styles";
 import {Navigate} from "react-router";
 
+/**
+ * @desc    Site Registration Page
+ * @return {JSX.Element}
+ * @constructor
+ */
 const Register = ({user: {user}, register}) => {
     const classes = useStyles();
 
@@ -23,6 +28,7 @@ const Register = ({user: {user}, register}) => {
     const [passwordError, setPasswordError] = useState(false);
     const [passwordConfirmError, setPasswordConfirmError] = useState(false);
 
+    // Redirect if logged in.
     if(user) {
         return <Navigate to="/profile" replace />
     }
