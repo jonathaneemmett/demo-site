@@ -13,36 +13,6 @@
       "email": "user@demosite.com",
       "password": "$argon2i$v=19$m=4096,t=3,p=1$QRMPPzOc2WQWFbQFDZzQvg$pdwcKrWWXUXim3DfvkdPUtBAlpMFpqdTXR1ANkNV3Nc",
       "isAdmin": "false"
-    },
-    {
-      "name": "Demo Test",
-      "email": "testUser@noemail.com",
-      "password": "$argon2i$v=19$m=4096,t=3,p=1$oFiR2wdt0MP9hMXpPNRsbA$jfB0yL6F+1rfnram9tKWowp08QHC5E4ucMMwdD6AqAE",
-      "id": "17Hu9iV"
-    },
-    {
-      "name": "Demo Test 2",
-      "email": "test2@noemail.com",
-      "password": "$argon2i$v=19$m=4096,t=3,p=1$ClSFGN3dFNdbXN2eQMmKxg$JvTX/JiYd+JpJy8PQViB4Vl5LoSefWRK4stcGvLodEM",
-      "id": "AIqqPR8"
-    },
-    {
-      "name": "Demo Test 3",
-      "email": "test3@noemail.com",
-      "password": "$argon2i$v=19$m=4096,t=3,p=1$89Q1vigRG7ys52ksniRkJQ$BCXplLckhEbTLq+UQ4F9R/+FI9QfNhkDtyoeVpEkO08",
-      "id": "QnREsaK"
-    },
-    {
-      "name": "Demo Test 4",
-      "email": "test4@noemail.com",
-      "password": "$argon2i$v=19$m=4096,t=3,p=1$TW+qTnGGLJwRFwKKrncqPQ$mklEQpi8JrY+NuEofYCQlkpieh71YeSuTyudE5gDT3U",
-      "id": "kEQaxxn"
-    },
-    {
-      "name": "Demo User 5",
-      "email": "user5@demosite.com",
-      "password": "$argon2i$v=19$m=4096,t=3,p=1$wdtBqhF4/fmeGENIfYXqxA$d54UvfkoeqR2PJHQE6jRtCY5g7meMe9an4MfRB68130",
-      "id": "95xMtei"
     }
   ],
   "products": [
