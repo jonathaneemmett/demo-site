@@ -38,6 +38,7 @@ export const useStyles = createUseStyles({
         backgroundColor: Colors.darkGrey,
         color: Colors.black,
         boxShadow: `0 1px 10px -2px ${Colors.black}`,
+        zIndex: 10,
     },
     navLinks: {
         '& a': {
@@ -171,6 +172,15 @@ export const useStyles = createUseStyles({
         flexDirection: "row",
         width: "100%",
         maxWidth: "990px",
+        margin: "0 auto",
+    },
+    search: {
+      zIndex: 10,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-evenly",
+        flexDirection: "row",
+        width: "100%",
         margin: "0 auto",
     },
     formContainer: {
