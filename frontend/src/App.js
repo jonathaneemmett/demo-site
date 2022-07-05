@@ -16,6 +16,7 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import Page404 from "./error/404";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import HeroCarousel from "./components/layout/HeroCarousel";
 
 // Styles
 import { useStyles } from "./assets/styles";
@@ -41,6 +42,7 @@ const App = ({products: { products }, loadProducts}) => {
   return (
     <BrowserRouter>
         <Navbar />
+        <HeroCarousel />
         <main className={classes.container} >
         <Routes>
             <Route exact path="/" element={<Home search={search} />} />

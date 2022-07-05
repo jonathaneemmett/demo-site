@@ -120,7 +120,6 @@ export const useStyles = createUseStyles({
     // End Navbar
     // Body
     container: {
-        height: "100%",
         width: "100%",
         maxWidth: "1336px",
         margin: "0 auto",
@@ -153,6 +152,82 @@ export const useStyles = createUseStyles({
             marginBottom: "5px",
         }
     },
+    slider: {
+        width: "100vw",
+        height: "650px",
+        position: "relative",
+        margin: "0 auto",
+        marginTop: "-51px",
+        zIndex: -1
+    },
+    slide: {
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100%",
+        height: "100%",
+        position: "absolute",
+        transition: "all 0.5s",
+        '& img': {
+            width: "100%",
+            height: "100%",
+            objectFit: "cover"
+        },
+        '& .caption': {
+            display: "flex",
+            justifyContent: "flex-start",
+            flexDirection: "column",
+            maxWidth: "33%",
+            position: "absolute",
+            bottom: "55%",
+            left: "10%",
+            zIndex: 20,
+            color: Colors.white,
+            textShadow: "0 1px 2px rgba(0,0,0,.6)",
+            '@media screen and (max-width: 768px)': {
+                // TODO: more mobile modifications
+                maxWidth: "100%",
+                left: 0,
+                padding: "25px"
+            }
+        }
+    },
+    sliderButtonContainer: {
+        width: "100%",
+        color: Colors.white,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        background: Colors.black30,
+        padding: "25px",
+        position: "absolute",
+        bottom: 0,
+        left: 0,
+        zIndex: 999999
+    },
+    sliderBtn: {
+        position: "absolute",
+        width: "40px",
+        height: "40px",
+        padding: "10px",
+        border: "none",
+        borderRadius: "50%",
+        zIndex: "10",
+        cursor: "pointer",
+        backgroundColor: Colors.white,
+        fontSize: "18px",
+        '&:active': {
+            transform: "scale(1.1)"
+        }
+    },
+    sliderBtnPrev: {
+      top: "45%",
+      left: "2%"
+    },
+    sliderBtnNext: {
+        top: "45%",
+        right: "2%"
+    },
     // Forms
     // login
     horizontalForm: {
@@ -175,7 +250,7 @@ export const useStyles = createUseStyles({
         margin: "0 auto",
     },
     search: {
-      zIndex: 10,
+        zIndex: 99999,
         display: "flex",
         alignItems: "center",
         justifyContent: "space-evenly",
