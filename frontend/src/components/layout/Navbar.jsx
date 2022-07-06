@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+
 import { connect } from "react-redux";
 
 // Actions
@@ -10,16 +11,16 @@ import {FaBars, FaSearch} from "react-icons/fa";
 
 // Styles
 import { useStyles } from "../../assets/styles";
+import SearchInput from "../search/SearchInput";
 
 /**
  * @desc    Site Navbar
  * @return {JSX.Element}
  * @constructor
  */
-const Navbar = ({user: {user}, logOut}) => {
+const Navbar = ({user: {user}, logOut, search, setSearch}) => {
     const classes = useStyles();
 
-    const [search, setSearch] = useState("");
     const [showSearch, setShowSearch] = useState(false);
     // To handle closing of menu when link is clicked, primarily for mobile view or dropdowns.
     const [isChecked, setIsChecked] = useState(false);
@@ -49,7 +50,7 @@ const Navbar = ({user: {user}, logOut}) => {
                     </div>
                 </ul>
             </nav>
-            <div className={classes.search} style={!showSearch ? {visibility: "hidden"} : {visibility: "visible"}}><input type="text" name="search" id="search" value={search} onChange={(e) => setSearch(e.target.value)} className={classes.formControl} placeholder="Disabled as functionality has not been established."  disabled/></div>
+            <SearchInput search={search} setSearch={setSearch} showSearch={showSearch} />
         </>
     );
 };

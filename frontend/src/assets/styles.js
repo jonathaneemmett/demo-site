@@ -257,6 +257,10 @@ export const useStyles = createUseStyles({
         flexDirection: "row",
         width: "100%",
         margin: "0 auto",
+        position: "relative",
+        '@media screen and (max-width: 768px)': {
+
+        }
     },
     formContainer: {
         height: "85vh",

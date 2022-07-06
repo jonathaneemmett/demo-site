@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Navigate } from "react-router";
 
 // Actions
 import { loadProducts } from "./actions/productsActions";
@@ -17,6 +18,7 @@ import Page404 from "./error/404";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import HeroCarousel from "./components/layout/HeroCarousel";
+import Search from "./components/search/Search";
 
 // Styles
 import { useStyles } from "./assets/styles";
@@ -41,13 +43,14 @@ const App = ({products: { products }, loadProducts}) => {
 
   return (
     <BrowserRouter>
-        <Navbar />
+        <Navbar search={search} setSearch={setSearch} />
         <HeroCarousel />
         <main className={classes.container} >
         <Routes>
             <Route exact path="/" element={<Home search={search} />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/search" element={<Search />} />
             <Route path="/profile" element={
                 <ProtectedRoute>
                     <Profile />
