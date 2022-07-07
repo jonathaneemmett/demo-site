@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { FaDotCircle } from "react-icons/fa";
 
 // Styles
@@ -11,29 +11,59 @@ import { useStyles } from "../../assets/styles";
  */
 const HeroCarousel = () => {
     const classes = useStyles();
+    const [current, setCurrent] = useState(0);
+    let slides = [
+        {
+            img: "https://source.unsplash.com/random?landscape,technology",
+            title: 'Slide 1',
+            caption: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur autem delectus dicta est exercitationem iusto maiores natus reiciendis repellat, vitae?'
+        },
+        {
+            img: "https://source.unsplash.com/random?landscape,computers",
+            title: 'Slide 2',
+            caption: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium atque cumque itaque, magni perferendis sunt?'
+        },
+        {
+            img: "https://source.unsplash.com/random?landscape,windows",
+            title: 'Slide 3',
+            caption: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam culpa explicabo perferendis porro quas. Ab at ex fugit harum impedit inventore nobis quas suscipit vitae. Commodi eaque praesentium quos temporibus!'
+        },
+    ]
 
+
+    const handleClick = (index) => {
+        console.log(index);
+        setCurrent(index)
+    }
     // Only partially complete
     return (
         <div className={classes.slider}>
             <div className={classes.sliderInner}>
-                <div className={classes.slide}>
-                    <img src="https://source.unsplash.com/random?landscape,technology" alt=""/>
-                    <div className="caption">
-                        <h1>Content Caption</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur autem delectus dicta est exercitationem iusto maiores natus reiciendis repellat, vitae?</p>
-                    </div>
-                </div>
-                <div className={classes.slide}>
-                    <img src="https://source.unsplash.com/random?landscape,computers" alt=""/>
-                </div>
-                <div className={classes.slide}>
-                    <img src="https://source.unsplash.com/random?landscape,windows" alt=""/>
-                </div>
+                {slides.length > 0 && slides.map((slide, index) => {
+                    return (
+                        <div key={index} className={classes.slide}>
+                            {index === current &&
+                                <>
+                                    <img src={slide.img} alt=""/>
+                                    <div className="caption">
+                                        <h1>{slide.title}</h1>
+                                        <p>{slide.caption}</p>
+                                    </div>
+                                </>
+                            }
+                        </div>
+                    )
+                })}
             </div>
             <div className={classes.sliderButtonContainer}>
-                <FaDotCircle style={{ marginRight: "10px", fontSize: "14px" }} />
-                <FaDotCircle style={{ marginRight: "10px", fontSize: "14px" }} />
-                <FaDotCircle style={{ marginRight: "10px", fontSize: "14px"  }} />
+                {slides.length > 0 && slides.map((slide, index) => {
+                    return (
+                        <button key={index}  onClick={() => console.log('fuck this')} className={classes.sliderBtn}>
+                            <FaDotCircle style={{ marginRight: "10px", fontSize: "14px" }}  />
+                        </button>
+
+                    )
+                })}
             </div>
         </div>
     );

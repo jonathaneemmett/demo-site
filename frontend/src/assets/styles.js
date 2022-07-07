@@ -181,7 +181,7 @@ export const useStyles = createUseStyles({
             position: "absolute",
             bottom: "55%",
             left: "10%",
-            zIndex: 20,
+            zIndex: 1,
             color: Colors.white,
             textShadow: "0 1px 2px rgba(0,0,0,.6)",
             '@media screen and (max-width: 768px)': {
@@ -203,19 +203,13 @@ export const useStyles = createUseStyles({
         position: "absolute",
         bottom: 0,
         left: 0,
-        zIndex: 999999
     },
     sliderBtn: {
-        position: "absolute",
-        width: "40px",
-        height: "40px",
-        padding: "10px",
+        color: Colors.white,
+        background: "none",
         border: "none",
-        borderRadius: "50%",
-        zIndex: "10",
-        cursor: "pointer",
-        backgroundColor: Colors.white,
-        fontSize: "18px",
+        outline: "none",
+        zIndex: 9999,
         '&:active': {
             transform: "scale(1.1)"
         }
