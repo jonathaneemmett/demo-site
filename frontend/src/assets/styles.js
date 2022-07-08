@@ -15,11 +15,8 @@ export const useStyles = createUseStyles({
             height: "100vh",
         },
         body: {
-            display: "flex",
-            flexDirection: "column",
             height: "100vh",
             fontSize: "16px",
-            overflowX: "hidden",
         },
         a: {
             textDecoration: "none",
@@ -121,18 +118,17 @@ export const useStyles = createUseStyles({
     // Body
     container: {
         width: "100%",
-        maxWidth: "1336px",
         margin: "0 auto",
-        padding: "15px",
         '@media (max-width: 768px)': {
             // TODO: Handle mobile
         }
     },
     content: {
-      minHeight: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center"
+        minHeight: "100vh",
+        maxWidth: "1336px",
+        margin: "0 auto",
+        width: "100%",
+        padding: "15px",
     },
     heading: {
         width: "100%",
@@ -158,7 +154,6 @@ export const useStyles = createUseStyles({
         position: "relative",
         margin: "0 auto",
         marginTop: "-51px",
-        zIndex: -1
     },
     slide: {
         display: "flex",
@@ -206,12 +201,18 @@ export const useStyles = createUseStyles({
     },
     sliderBtn: {
         color: Colors.white,
-        background: "none",
+        background: "white",
         border: "none",
         outline: "none",
-        zIndex: 9999,
-        '&:active': {
-            transform: "scale(1.1)"
+        borderRadius: "50%",
+        width: "11px",
+        height: "11px",
+        margin: "5px 10px 5px 10px",
+        zIndex: 11,
+        '&.active': {
+            transform: "scale(1.1)",
+            background: Colors.darkGrey,
+            border: `1px solid ${Colors.white}`
         }
     },
     sliderBtnPrev: {
@@ -330,11 +331,17 @@ export const useStyles = createUseStyles({
       marginBottom: "35px"
     },
     pageItem: {
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
         listStyle: "none",
-        padding: "15px 25px 15px 25px",
+        width: "20px",
+        height: "20px",
+        padding: "10px",
         margin: "5px",
         background: Colors.black50,
-        borderRadius: "5px",
+        borderRadius: "50%",
+        fontSize: "10px",
         cursor: "pointer",
         '&:hover': {
             background: Colors.black
@@ -361,13 +368,16 @@ export const useStyles = createUseStyles({
         }
     },
     productItem: {
-      background: Colors.black75,
-      padding: "15px",
-      color: Colors.white,
-      boxShadow: `0 0 3px ${Colors.black}`,
-      '@media screen and (max-width: 768px)': {
+        flexGrow: 1,
+        flexShrink: 1,
+        flexBasis: 0,
+        background: Colors.black75,
+        padding: "15px",
+        color: Colors.white,
+        boxShadow: `0 0 3px ${Colors.black}`,
+        '@media screen and (max-width: 768px)': {
           width: "100%",
-      }
+        }
     },
     productItemHeader: {
       display: "flex",
@@ -378,8 +388,8 @@ export const useStyles = createUseStyles({
     },
     productName: {
         fontWeight: "bolder",
-        fontSize: "1rem",
-        height: "100%"
+        fontSize: ".8rem",
+        height: "100%",
     },
     productStars: {
         color: Colors.red,
@@ -402,6 +412,31 @@ export const useStyles = createUseStyles({
         fontWeight: "bold"
     },
     // End Product Styling
+    // Email SignUp
+    emailSignUp: {
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100%",
+        padding: "25px",
+        background: Colors.darkGrey,
+        '& input[type=email]': {
+            padding: "15px",
+            width: "50%",
+            marginRight: "15px",
+            '@media (max-width: 768px)': {
+                width: "100%",
+            }
+        },
+        '& a': {
+            padding: "15px",
+            background: Colors.lightGrey,
+            '@media (max-width: 768px)': {
+                whiteSpace: "nowrap"
+            }
+        }
+    },
+    // End Email SignUp
     // End Body
     //Footer
     footer: {

@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from "react-redux";
 
-// Styles
-import { useStyles } from "../../assets/styles";
+// Components
 import Pagination from "../pagination/Pagination";
 import ProductItem from "../products/ProductItem";
+import HeroCarousel from "../layout/HeroCarousel";
+import EmailSignUp from "../layout/EmailSignUp";
+
+// Styles
+import { useStyles } from "../../assets/styles";
+
 
 /**
  * @desc    Site Home Page
@@ -16,7 +21,7 @@ const Home = ({ products: { products, filteredProducts, is_loading }, search }) 
 
     // Pagination state
     const [currentPage, setCurrentPage] = useState(1);
-    const [productsPerPage, setProductsPerPage] = useState(10);
+    const [productsPerPage, setProductsPerPage] = useState(3);
 
     // Funcs
     const paginate = (e, pageNumber) => {
@@ -40,12 +45,16 @@ const Home = ({ products: { products, filteredProducts, is_loading }, search }) 
 
     return (
        <>
-           <div className={classes.productContent}>
-               {currentProducts.length > 0 ? currentProducts.map((product) => (
-                    <ProductItem key={product._id} data={product} />
-               )) : <div>No products to show!</div>}
+           <HeroCarousel />
+           <EmailSignUp />
+           <div className={classes.content}>
+               <div className={classes.productContent}>
+                   {currentProducts.length > 0 ? currentProducts.map((product) => (
+                       <ProductItem key={product._id} data={product} />
+                   )) : <div>No products to show!</div>}
+               </div>
+               <Pagination paginate={paginate} postsPerPage={productsPerPage} totalPosts={filteredProducts.length <= 0 ? products.length : filteredProducts.length} />
            </div>
-           <Pagination paginate={paginate} postsPerPage={productsPerPage} totalPosts={filteredProducts.length <= 0 ? products.length : filteredProducts.length} />
        </>
     );
 };

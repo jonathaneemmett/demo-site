@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import { FaDotCircle } from "react-icons/fa";
 
 // Styles
 import { useStyles } from "../../assets/styles";
@@ -32,7 +31,6 @@ const HeroCarousel = () => {
 
 
     const handleClick = (index) => {
-        console.log(index);
         setCurrent(index)
     }
     // Only partially complete
@@ -58,10 +56,9 @@ const HeroCarousel = () => {
             <div className={classes.sliderButtonContainer}>
                 {slides.length > 0 && slides.map((slide, index) => {
                     return (
-                        <button key={index}  onClick={() => console.log('fuck this')} className={classes.sliderBtn}>
-                            <FaDotCircle style={{ marginRight: "10px", fontSize: "14px" }}  />
-                        </button>
+                        <button key={index}  onClick={() => handleClick(index)} className={current === index ? `${classes.sliderBtn} active` : classes.sliderBtn} >
 
+                        </button>
                     )
                 })}
             </div>

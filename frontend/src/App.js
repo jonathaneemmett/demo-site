@@ -22,6 +22,7 @@ import Search from "./components/search/Search";
 
 // Styles
 import { useStyles } from "./assets/styles";
+import EmailSignUp from "./components/layout/EmailSignUp";
 
 /**
  * @desc    Main App
@@ -44,7 +45,6 @@ const App = ({products: { products }, loadProducts}) => {
   return (
     <BrowserRouter>
         <Navbar search={search} setSearch={setSearch} />
-        <HeroCarousel />
         <main className={classes.container} >
         <Routes>
             <Route exact path="/" element={<Home search={search} />} />
